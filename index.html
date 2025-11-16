@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カービィのワクワク世界！</title>
+<link rel="icon" href="kirbyicon.png">
+<link rel="stylesheet" href="main.css">
+
+<!-- Google Font（可愛い丸フォント） -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ===== Loading Screen ===== -->
+<div id="loadingWrap">
+  <div class="loader-card">
+    <div class="loader-kirby">
+      <img src="kirby-cute.gif">
+    </div>
+    <div class="loader-text">読み込み中…</div>
+    <div class="loader-sub">カービィが準備してるよ！</div>
+    <div class="suck-wrap">
+      <div id="suckFill" class="suck-fill"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== Background Scene ===== -->
+<div class="scene">
+  <div class="stars"></div>
+  <div class="warpstars"></div>
+  <div class="clouds"></div>
+  <div class="kirby-bubbles"></div>
+</div>
+
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="brand">
+    <a href="index.html"><img src="kirbyicon.png"></a>
+    <a href="index.html"><h1>カービィのワクワク世界</h1></a>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html" class="pill hover-sfx">ホーム</a></li>
+      <li><a href="character.html" class="pill hover-sfx">キャラ</a></li>
+      <li><a href="goods.html" class="pill hover-sfx">グッズ</a></li>
+      <li><a id="playTrailer" class="pill hover-sfx">トレーラー</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- ===== Main Content ===== -->
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <h2>カービィのワクワク世界へ！</h2>
+      <p>星のカービィシリーズの仲間たちが大集合。かわいさ120%のスペシャルページ！</p>
+      <div class="buttons" style="text-align: center;">
+        <a class="pill hover-sfx" href="#charGrid" style="text-align: center">今すぐ見る</a>
+      </div>
+    </div>
+
+    <div class="hero-right slider">
+      <div class="slides" id="slides">
+        <div class="slide"><a href="wadoruge-game.html"><img src="wadderde_game.png"></a></div>
+        <div class="slide"><img src="https://i.imgur.com/SpVcU1M.jpeg"></div>
+        <div class="slide"><img src="https://i.imgur.com/FGzjq9e.jpeg"></div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+
+  <!-- Characters -->
+  <h2 class="center" style="margin-top:40px;">キャラクター</h2>
+  <p class="center muted">ダブルタップ（PCはダブルクリック）でメニューが開くよ！</p>
+  <div id="charGrid" class="chars"></div>
+
+
+  <!-- Goods -->
+  <h2 class="center" style="margin-top:40px;">グッズ</h2>
+  <p class="center muted">かわいいカービィグッズがいっぱい！</p>
+  <div class="goods"></div>
+
+</main>
+
+
+<!-- ===== Modal ===== -->
+<div class="modal" id="modal">
+  <div class="box">
+    <button id="closeModal" class="pill hover-sfx" style="float:right">閉じる</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <p id="gyuri">© 2025 カービィのワクワク世界(非公式)</p>
+</footer>
+
+<!-- 半円メニュー（CSSは main.css に追加するだけでOK） -->
+<style>
+.halfmenu{
+  position:absolute;
+  background:rgba(255, 200, 240, 0.95);
+  backdrop-filter:blur(6px);
+  border-radius:100px 100px 0 0;
+  padding:14px 20px 10px 20px;
+  box-shadow:0 10px 30px rgba(255,0,200,0.25);
+  transform:translate(-50%, -100%);
+  animation:popup .18s ease-out;
+  z-index:999999;
+}
+@keyframes popup{
+  from{transform:translate(-50%,-60%) scale(.5);opacity:0;}
+  to{transform:translate(-50%,-100%) scale(1);opacity:1;}
+}
+.halfmenu button{
+  padding:10px 18px;
+  background:linear-gradient(135deg,#ffccf5,#ff79d4);
+  border-radius:999px;
+  border:3px solid #fff;
+  font-weight:900;
+  color:#6a0044;
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(255,0,160,0.36);
+}
+</style>
+
+<script src="main.js"></script>
+</body>
+</html>

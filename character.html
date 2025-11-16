@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>キャラ詳細 | Kirby Super Cute</title>
+<link rel="stylesheet" href="main.css" />
+<style>
+  body{padding:20px;}
+  .detail-box{
+    background:linear-gradient(180deg,#fff0fa,#ffe4fb);
+    max-width:480px;
+    margin:40px auto;
+    padding:26px;
+    border-radius:26px;
+    border:6px solid #ff66c6;
+    box-shadow:0 18px 50px rgba(255,0,150,0.3);
+    text-align:center;
+  }
+  #img{
+    width:240px;
+    filter:drop-shadow(0 12px 20px rgba(255,0,180,0.5));
+  }
+  .desc{
+    margin-top:12px;
+    color:#7a0060;
+    font-weight:700;
+    white-space:pre-line;
+  }
+  .back{
+    margin-top:24px;
+    display:inline-block;
+    padding:12px 20px;
+    background:linear-gradient(90deg,#ffe600,#ff8b00);
+    color:#6a0044;
+    font-weight:900;
+    border-radius:999px;
+    box-shadow:0 10px 20px rgba(255,150,0,0.4);
+    border:3px solid #fff;
+    text-decoration:none;
+  }
+  .back:hover{transform:scale(1.05)}
+</style>
+</head>
+<body>
+<div id="loadingWrap">
+  <div class="loader-card">
+    <div class="loader-kirby">
+      <img src="kirby-cute.gif">
+    </div>
+    <div class="loader-text">読み込み中…</div>
+    <div class="loader-sub">カービィが準備してるよ！</div>
+    <div class="suck-wrap">
+      <div id="suckFill" class="suck-fill"></div>
+    </div>
+  </div>
+</div>
+<div class="scene">
+  <div class="stars"></div>
+  <div class="clouds"></div>
+  <div class="kirby-bubbles"></div>
+</div>
+
+<div class="detail-box">
+  <h2 id="title">読み込み中…</h2>
+  <img id="img" src="" />
+  <div id="desc" class="desc"></div>
+  <a href="index.html" class="back">← もどる</a>
+</div>
+
+<script src="main.js"></script>
+<script>
+// URL からキャラ名を取得
+const params = new URLSearchParams(location.search);
+const name = params.get("name");
+
+// キャラの説明（自由に増やせる）
+const charDesc = {
+  "カービィ": "食べるのが大好き！\nどんなものでもすいこめる、元気いっぱいの星の戦士♪",
+  "ワドルディ": "プププランドのやさしい住人。\nバンダナワドルディはとても勇敢！",
+  "メタナイト": "謎めいた仮面の剣士。\n実はカービィと同じ種族らしい…？",
+  "デデデ大王": "プププランドの自称大王。\n本当はわりとやさしい一面もある。"
+};
+
+window.addEventListener("load", ()=>{
+  const ch = characters.find(x=>x.name === name);
+
+  if(!ch){
+    document.getElementById("title").innerText = "キャラが見つかりません";
+    return;
+  }
+
+  document.getElementById("title").innerText = ch.name;
+  document.getElementById("img").src = ch.img;
+  document.getElementById("desc").innerText = charDesc[ch.name] || "かわいいキャラだよ！";
+});
+</script>
+
+</body>
+</html>
