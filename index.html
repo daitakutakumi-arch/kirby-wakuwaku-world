@@ -2,29 +2,28 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Redirecting...</title>
+  <title>Secret Gate</title>
 </head>
 <body>
-    <script>
-  // 許可する経由元のURL（完全一致 or 一部一致など自由）
-  const allowedReferrers = [
-    "https://daitakutakumi-arch.github.io/a",
+<script>
+  // ❗ここに許可したいサイト（経由元）を書く
+  const allowed = [
+    "https://example.com",                   // 許可1
+    "https://daitakutakutmi-arch.github.io/" // 許可2（例）
   ];
 
   const ref = document.referrer;
 
-  // 経由元が許可リストに含まれてるか
-  const ok = allowedReferrers.some(site => ref.startsWith(site));
+  // 許可サイトから来たか判定
+  const ok = allowed.some(url => ref.startsWith(url));
 
   if (!ok) {
-    // 経由NG → 拒否ページへ飛ばす
-     window.location.replace("blocked.html");
-    location.replace("blocked.html");
+    // ❌ NG → 即ワープ（履歴に残らない）
+    location.replace("blocked.html");  // 拒否先URLに変更してOK
+  } else {
+    // ✅ OK → 中に入った瞬間 別サイトに履歴なしでワープ
+    location.replace("https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/kirby-wakuwaku-world");   // 許可された人のワープ先
   }
-</script>
-<script>
-  // 履歴に残さずページ移動
-  location.replace("https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/kirby-wakuwaku-wrold.html");
 </script>
 </body>
 </html>
