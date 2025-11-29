@@ -4,7 +4,52 @@
 <link rel="stylesheet" href="main.css" />
 <title>ゲーム詳細 | Kirby Super Cute</title>
   <link rel="icon" href="kirby-cute.gif">
+  <link rel="icon" href="kirbyicon.png">
 </head>
+<style>
+  body{
+    padding:20px;
+  }
+  .detail-box{
+    background:linear-gradient(180deg,#fff0fa,#ffe4fb);
+    max-width:480px;
+    margin:40px auto;
+    padding:26px;
+    border-radius:26px;
+    border:6px solid #ff66c6;
+    box-shadow:0 18px 50px rgba(255,0,150,0.3);
+    text-align:center;
+  }
+  .detail-box img{
+    width:260px;
+    filter:drop-shadow(0 12px 20px rgba(255,0,180,0.5));
+  }
+  .price{
+    font-size:1.8rem;
+    margin-top:10px;
+    color:#ff0fa0;
+    font-weight:900;
+    text-shadow:0 0 10px #fff;
+  }
+  .desc{
+    margin-top:12px;
+    color:#7a0060;
+    font-weight:700;
+  }
+  .back{
+    margin-top:24px;
+    display:inline-block;
+    padding:12px 20px;
+    background:linear-gradient(90deg,#ffe600,#ff8b00);
+    color:#6a0044;
+    font-weight:900;
+    border-radius:999px;
+    box-shadow:0 10px 20px rgba(255,150,0,0.4);
+    border:3px solid #fff;
+    text-decoration:none;
+  }
+  .back:hover{transform:scale(1.05)}
+</style>
 <html lang="ja" style="--bg-color: #ffa2c3;--accent-color: #ff9f9f;">
 <footer>
     <h1 id="midasi" style="text-align: center;">ゲーム詳細</h1>
@@ -17,3 +62,9 @@
 <h2 style="text-align: center;">必要容量：1GB(予定)</h2>
 <h2 style="text-align: center;">発売日：2027年4月30日(予定)</h2>
 <h2 style="text-align: center;">開発会社：キリパゴパラダイス()</h2>
+<div class="detail-box">
+<a href="index.html" class="back">← もどる</a></div>
+
+<script src="main.js"></script>
+</body>
+</html>

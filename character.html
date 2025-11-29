@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>キャラ詳細 | Kirby Super Cute</title>
 <link rel="stylesheet" href="main.css" />
+<link rel="icon" href="kirbyicon.png">
 <style>
   body{padding:20px;}
   .detail-box{
@@ -43,6 +44,22 @@
 </style>
 </head>
 <body>
+  <script>
+  // 許可する経由元のURL（完全一致 or 一部一致など自由）
+  const allowedReferrers = [
+    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/kirby-wakuwaku-wrold.html",
+  ];
+
+  const ref = document.referrer;
+
+  // 経由元が許可リストに含まれてるか
+  const ok = allowedReferrers.some(site => ref.startsWith(site));
+
+  if (!ok) {
+    // 経由NG → 拒否ページへ飛ばす
+    location.replace("blocked.html");
+  }
+</script>
 <div id="loadingWrap">
   <div class="loader-card">
     <div class="loader-kirby">

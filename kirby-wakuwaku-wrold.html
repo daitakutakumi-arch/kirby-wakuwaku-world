@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>カービィのワクワク世界！</title>
+<link rel="stylesheet" href="main.css" />
+<link rel="icon" href="kirbyicon.png">
+</head>
+<body>
+<script>
+  // 許可する経由元のURL（完全一致 or 一部一致など自由）
+  const allowedReferrers = [
+    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world",
+  ];
+
+  const ref = document.referrer;
+
+  // 経由元が許可リストに含まれてるか
+  const ok = allowedReferrers.some(site => ref.startsWith(site));
+
+  if (!ok) {
+    // 経由NG → 拒否ページへ飛ばす
+    location.replace("blocked.html");
+  }
+</script>
+<!-- Loading Screen -->
+<div id="loadingWrap">
+  <div class="loader-card">
+    <div class="loader-kirby"><img src="kirby-cute.gif"></div>
+    <div class="loader-text">読み込み中…</div>
+    <div class="loader-sub">カービィが準備してるよ！</div>
+    <div class="suck-wrap">
+      <div id="suckFill" class="suck-fill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Background Scene -->
+<div class="scene">
+  <div class="stars"></div>
+  <div class="clouds"></div>
+  <div class="kirby-bubbles"></div>
+</div>
+
+<header>
+  <div class="brand">
+    <img src="kirbyicon.png">
+    <h1>カービィのワクワク世界</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#" class="pill hover-sfx">ホーム</a></li>
+      <li><a href="#character" class="pill hover-sfx">キャラ</a></li>
+      <li><a href="#goods" class="pill hover-sfx">グッズ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-left">
+      <h2>カービィのワクワク世界へ！</h2>
+      <p>星のカービィの仲間が大集合！かわいさ120%！</p>
+      <div class="buttons">
+        <a class="pill hover-sfx">今すぐ見る</a>
+        <a class="pill hover-sfx">人気ランキング</a>
+      </div>
+    </div>
+
+    <div class="hero-right slider">
+      <div class="slides" id="slides">
+        <div class="slide"><a href="wadoruge-game.html"><img src="wadderde_game.png"></a></div>
+        <div class="slide"><img src="https://www.kirby.jp/files/31/kirby2.jpg"></div>
+        <div class="slide"><img src="https://www.kirby.jp/files/31/kirby3.jpg"></div>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <h2 class="center" id="character">キャラクター</h2>
+  <div id="charGrid" class="chars"></div>
+
+  <h2 class="center" id="goods">グッズ</h2>
+  <div class="goods"></div>
+
+</main>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="box">
+    <button id="closeModal" class="pill hover-sfx">閉じる</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
