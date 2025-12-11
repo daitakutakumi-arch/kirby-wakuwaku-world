@@ -55,22 +55,7 @@
     <h1 id="midasi" style="text-align: center;">ゲーム詳細</h1>
 </footer>
 <body>
-   <script>
-  // 許可する経由元のURL（完全一致 or 一部一致など自由）
-  const allowedReferrers = [
-    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/kirby-wakuwaku-world.html",
-  ];
-
-  const ref = document.referrer;
-
-  // 経由元が許可リストに含まれてるか
-  const ok = allowedReferrers.some(site => ref.startsWith(site));
-
-  if (!ok) {
-    // 経由NG → 拒否ページへ飛ばす
-    location.replace("blocked.html");
-  }
-</script>
+   
 <img src="wadderde_game.png" alt="ワドルディの大冒険" style="display: block; margin: 0 auto; width: 300px;"/>
 <h2 style="text-align: center;">説明：作成中</h2>
 <h2 style="text-align: center;">値段：1550円(予定)</h2>
@@ -88,3 +73,4 @@
 </body>
 
 </html>
+
