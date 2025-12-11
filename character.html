@@ -44,22 +44,7 @@
 </style>
 </head>
 <body>
-  <script>
-  // 許可する経由元のURL（完全一致 or 一部一致など自由）
-  const allowedReferrers = [
-    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/kirby-wakuwaku-world.html",
-  ];
-
-  const ref = document.referrer;
-
-  // 経由元が許可リストに含まれてるか
-  const ok = allowedReferrers.some(site => ref.startsWith(site));
-
-  if (!ok) {
-    // 経由NG → 拒否ページへ飛ばす
-    location.replace("blocked.html");
-  }
-</script>
+ 
 <div id="loadingWrap">
   <div class="loader-card">
     <div class="loader-kirby">
@@ -114,4 +99,5 @@ window.addEventListener("load", ()=>{
 </script>
 
 </body>
+
 </html>
