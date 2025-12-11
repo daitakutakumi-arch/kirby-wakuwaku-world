@@ -8,26 +8,7 @@
 <link rel="icon" href="kirbyicon.png">
 </head>
 <body>
-<script>
-  // 許可する経由元のURL（完全一致 or 一部一致など自由）
-  const allowedReferrers = [
-    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world",
-    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/character.html",
-    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/goods.html",
-    "https://daitakutakumi-arch.github.io/kirby-wakuwaku-world/wadoruge-game.html",
-  ];
 
-  const ref = document.referrer;
-
-  // 経由元が許可リストに含まれてるか
-  const ok = allowedReferrers.some(site => ref.startsWith(site));
-
-  if (!ok) {
-    // 経由NG → 拒否ページへ飛ばす
-     window.location.replace("blocked.html");
-    location.replace("blocked.html");
-  }
-</script>
 <!-- Loading Screen -->
 <div id="loadingWrap">
   <div class="loader-card">
@@ -103,3 +84,4 @@
 <script src="main.js"></script>
 </body>
 </html>
+
