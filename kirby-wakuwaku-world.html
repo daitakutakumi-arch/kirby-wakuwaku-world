@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="main.css" />
 <link rel="icon" href="kirbyicon.png">
 </head>
+ 
+
 <body>
 
 <!-- Loading Screen -->
@@ -82,6 +84,60 @@
 <div class="toast" id="toast"></div>
 
 <script src="main.js"></script>
+  <script>
+  if (location.hash === '#https://www.kirby.jp') {
+    document.body.innerHTML = `
+      <div id="glitch">
+        <div class="noise"></div>
+      </div>
+    `;
+
+    const words = ['ERROR','???','NO SIGNAL','404','NULL','ACCESS DENIED'];
+    for (let i = 0; i < 50; i++) {
+      const d = document.createElement('div');
+      d.textContent = words[Math.floor(Math.random()*words.length)];
+      d.style.position = 'fixed';
+      d.style.left = Math.random()*100 + 'vw';
+      d.style.top = Math.random()*100 + 'vh';
+      d.style.color = Math.random() > 0.5 ? 'red' : 'lime';
+      d.style.fontFamily = 'monospace';
+      d.style.fontSize = '24px';
+      d.style.transform = 'rotate('+(Math.random()*20-10)+'deg)';
+      d.style.animation = 'flash 0.2s infinite';
+      document.body.appendChild(d);
+    }
+  }
+</script>
+<style>
+  body {
+    background: black !important;
+    overflow: hidden;
+  }
+  .noise {
+    position: fixed;
+    inset: -20%;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    animation: jitter 0.12s infinite;
+  }
+  @keyframes jitter {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(-5px,3px); }
+    50% { transform: translate(6px,-4px); }
+    75% { transform: translate(-3px,-6px); }
+    100% { transform: translate(0,0); }
+  }
+  @keyframes flash {
+    50% { opacity: 0.2; }
+  }
+</style>
+
 </body>
 </html>
+
 
